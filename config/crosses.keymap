@@ -112,16 +112,6 @@
             tapping-term-ms = <50>;
             bindings = <&kp LALT>, <&kp CAPS>;
         };
-
-        msc: mouse_scroll {
-            compatible = "zmk,behavior-input-two-axis";
-            label = "MOUSE_SCROLL";
-            #binding-cells = <1>;
-            x-input-code = <INPUT_REL_HWHEEL>;
-            y-input-code = <INPUT_REL_WHEEL>;
-            time-to-max-speed-ms = <100>;
-            acceleration-exponent = <1>;
-        };
     };
 
     combos { compatible = "zmk,combos"; };
