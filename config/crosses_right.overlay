@@ -1,0 +1,9 @@
+&trackball_central {
+    compatible = "pixart,pmw3610";
+    /delete-property/ xy-swap;
+    /delete-property/ x-invert;
+    /delete-property/ y-invert;
+    swap-xy;
+    invert-x;
+    invert-y;
+};

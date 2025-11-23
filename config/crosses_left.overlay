@@ -1,0 +1,5 @@
+&trackball_peripheral {
+    compatible = "pixart,pmw3610";
+    /delete-property/ xy-swap;
+    swap-xy;
+};
