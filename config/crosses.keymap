@@ -8,6 +8,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/input/input-event-codes.h>
 
 #define NAV_LAYER 1
 #define SYM_LAYER 2
@@ -112,6 +113,16 @@
             tapping-term-ms = <50>;
             bindings = <&kp LALT>, <&kp CAPS>;
         };
+
+        msc: mouse_scroll {
+            compatible = "zmk,behavior-input-two-axis";
+            label = "MOUSE_SCROLL";
+            #binding-cells = <1>;
+            x-input-code = <INPUT_REL_HWHEEL>;
+            y-input-code = <INPUT_REL_WHEEL>;
+            time-to-max-speed-ms = <100>;
+            acceleration-exponent = <1>;
+        };
     };
 
     combos { compatible = "zmk,combos"; };
@@ -158,9 +169,9 @@
         mouse_layer {
             display-name = "Mouse";
             bindings = <
-&trans  &trans  &trans     &trans     &trans             &trans     &trans  &trans  &trans  &trans  &trans &trans
+&trans  &trans  &trans     &trans     &msc SCRL_DOWN     &trans     &trans  &trans  &trans  &trans  &trans &trans
 &trans  &trans  &mkp RCLK  &mkp MCLK  &mkp LCLK          &trans     &trans  &trans  &trans  &trans  &trans &trans
-&trans  &trans  &trans     &trans     &trans             &trans     &trans  &trans  &trans  &trans  &trans &trans
+&trans  &trans  &trans     &trans     &msc SCRL_UP       &trans     &trans  &trans  &trans  &trans  &trans &trans
                            &trans     &trans     &trans     &trans  &trans  &trans
             >;
         };
