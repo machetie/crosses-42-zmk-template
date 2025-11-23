@@ -8,7 +8,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <dt-bindings/input/input-event-codes.h>
 
 #define NAV_LAYER 1
 #define SYM_LAYER 2
@@ -118,8 +117,8 @@
             compatible = "zmk,behavior-input-two-axis";
             label = "MOUSE_SCROLL";
             #binding-cells = <1>;
-            x-input-code = <INPUT_REL_HWHEEL>;
-            y-input-code = <INPUT_REL_WHEEL>;
+            x-input-code = <0x06>; // INPUT_REL_HWHEEL
+            y-input-code = <0x08>; // INPUT_REL_WHEEL
             time-to-max-speed-ms = <100>;
             acceleration-exponent = <1>;
         };
