@@ -1,14 +1,21 @@
 manifest:
+  defaults:
+    revision: v0.3
   remotes:
     - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+    - name: Good-Great-Grand-Wonderful
       url-base: https://github.com/Good-Great-Grand-Wonderful
     - name: efogdev
       url-base: https://github.com/efogdev
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: gggw/crosses
       import: app/west.yml
+    - name: gggw-zmk-keebs
+      remote: Good-Great-Grand-Wonderful
+      revision: main
+      import: config/west.yml
     - name: zmk-pmw3610-driver
       remote: efogdev
       revision: main
@@ -17,3 +24,4 @@ manifest:
       revision: main
   self:
     path: config
+
