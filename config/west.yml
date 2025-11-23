@@ -6,8 +6,6 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: Good-Great-Grand-Wonderful
       url-base: https://github.com/Good-Great-Grand-Wonderful
-    - name: badjeff
-      url-base: https://github.com/badjeff
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -16,12 +14,5 @@ manifest:
       remote: Good-Great-Grand-Wonderful
       revision: main
       import: config/west.yml
-    - name: zmk-pmw3610-driver
-      remote: badjeff
-      revision: main
-    - name: zmk-input-processor-report-rate-limit
-      remote: efogdev
-      revision: main
   self:
     path: config
-
