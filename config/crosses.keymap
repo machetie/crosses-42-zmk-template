@@ -10,6 +10,9 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 10
 #include <dt-bindings/zmk/pointing.h>
 
+#define SCRL_UP MOVE_Y(ZMK_POINTING_DEFAULT_SCRL_VAL)
+#define SCRL_DOWN MOVE_Y(-ZMK_POINTING_DEFAULT_SCRL_VAL)
+
 #define NAV_LAYER 1
 #define SYM_LAYER 2
 #define SYSTEM_LAYER 3
@@ -159,10 +162,10 @@
         mouse_layer {
             display-name = "Mouse";
             bindings = <
-&trans  &trans  &trans     &trans     &msc SCRL_DOWN    &trans     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &mkp RCLK  &mkp MCLK  &mkp LCLK         &trans     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans     &trans     &msc SCRL_UP      &trans     &trans  &trans  &trans  &trans  &trans  &trans
-                           &trans     &trans            &trans     &trans  &trans  &trans
+&trans  &trans  &trans     &trans     &msc SCRL_UP             &trans     &trans  &trans  &trans  &trans  &trans &trans
+&trans  &trans  &mkp RCLK  &mkp MCLK  &mkp LCLK          &trans     &trans  &trans  &trans  &trans  &trans &trans
+&trans  &trans  &trans     &trans     &msc SCRL_DOWN             &trans     &trans  &trans  &trans  &trans  &trans &trans
+                           &trans     &trans     &trans     &trans  &trans  &trans
             >;
         };
     };
