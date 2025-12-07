@@ -15,17 +15,8 @@
 };
 
 / {
-    delete-node: split_inputs;
-};
-
-&trackball_peripheral_split {
-    status = "disabled";
-};
-
-&trackball_peripheral_listener {
-    status = "disabled";
-};
-
-&trackball_central_listener {
-    status = "disabled";
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+    };
 };
