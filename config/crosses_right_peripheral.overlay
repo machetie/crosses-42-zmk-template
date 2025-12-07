@@ -1,7 +1,6 @@
 / {
     chosen {
         zmk,kscan = &default_kscan;
-        zmk,input = &trackball_peripheral_split;
     };
 
     default_kscan: kscan {
@@ -13,4 +12,20 @@
 
 &default_transform {
     col-offset = <21>;
+};
+
+/ {
+    delete-node: split_inputs;
+};
+
+&trackball_peripheral_split {
+    status = "disabled";
+};
+
+&trackball_peripheral_listener {
+    status = "disabled";
+};
+
+&trackball_central_listener {
+    status = "disabled";
 };
