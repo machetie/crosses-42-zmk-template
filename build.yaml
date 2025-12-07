@@ -5,8 +5,8 @@ include:
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
     artifact-name: crosses-left-peripheral
   - board: nice_nano_v2
-    shield: crosses_right
-    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n -DCONFIG_ZMK_POINTING=n -DSHIELD_OVERLAY_CONFIG_FILE=config/crosses_right_peripheral.overlay
+    shield: crosses_right_peripheral
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
     artifact-name: crosses-right-peripheral
   - board: nice_nano_v2
     shield: crosses_right
