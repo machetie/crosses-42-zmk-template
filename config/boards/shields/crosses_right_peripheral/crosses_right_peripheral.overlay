@@ -24,7 +24,7 @@
                     < &pro_micro 0 GPIO_ACTIVE_HIGH >;
     };
 
-    default_transform: default_transform {
+    transform: transform {
         compatible = "zmk,matrix-transform";
         map = <
             RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5)
