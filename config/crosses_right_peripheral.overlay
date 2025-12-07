@@ -1,6 +1,7 @@
 / {
     chosen {
         zmk,kscan = &default_kscan;
+        zmk,input = &trackball;
     };
 
     default_kscan: kscan {
