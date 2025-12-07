@@ -6,6 +6,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: Good-Great-Grand-Wonderful
       url-base: https://github.com/Good-Great-Grand-Wonderful
+    - name: janpfischer
+      url-base: https://github.com/janpfischer
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -14,5 +16,8 @@ manifest:
       remote: Good-Great-Grand-Wonderful
       revision: main
       import: config/west.yml
+    - name: zmk-dongle-screen
+      remote: janpfischer
+      revision: main
   self:
     path: config
