@@ -1,7 +1,7 @@
 / {
     chosen {
         zmk,kscan = &default_kscan;
-        zmk,input = &trackball;
+        zmk,input = &trackball_peripheral_split;
     };
 
     default_kscan: kscan {
