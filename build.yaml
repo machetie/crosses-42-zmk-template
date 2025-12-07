@@ -9,8 +9,8 @@ include:
     cmake-args: -DCONFIG_ZMK_STUDIO=y
     artifact-name: crosses-right
   - board: seeeduino_xiao_ble
-    shield: crosses_dongle dongle_screen
-    artifact-name: crosses-dongle-screen
+    shield: xiao_dongle dongle_screen
+    artifact-name: xiao-dongle-screen
   - board: seeeduino_xiao_ble
     shield: settings_reset
     artifact-name: crosses-settings-reset
