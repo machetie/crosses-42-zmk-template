@@ -1,7 +1,7 @@
 if SHIELD_XIAO_DONGLE
 
 config ZMK_KEYBOARD_NAME
-    default "XIAO Dongle"
+    default "Crosses"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
