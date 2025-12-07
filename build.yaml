@@ -13,4 +13,7 @@ include:
     artifact-name: xiao-dongle-screen
   - board: seeeduino_xiao_ble
     shield: settings_reset
-    artifact-name: crosses-settings-reset
+    artifact-name: xiao-settings-reset
+  - board: nice_nano_v2
+    shield: settings_reset
+    artifact-name: nice-settings-reset
