@@ -1,9 +1,0 @@
- / {
-     chosen {
-         zmk,physical-layout = &gggw_crosses_42_layout;
-     };
- };
-
- &trackball_peripheral_split {
-     device = <&trackball_central>;
- };
