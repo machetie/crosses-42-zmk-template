@@ -1,0 +1,65 @@
+/*
+ * Copyright (c) 2025 Vincent Franco
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "crosses.dtsi"
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
+&kscan0 {
+  col-gpios
+    = <&pro_micro 0 GPIO_ACTIVE_HIGH>
+    , <&pro_micro 18 GPIO_ACTIVE_HIGH>
+    , <&pro_micro 15 GPIO_ACTIVE_HIGH>
+    , <&pro_micro 10 GPIO_ACTIVE_HIGH>
+    , <&pro_micro 16 GPIO_ACTIVE_HIGH>
+    , <&pro_micro 14 GPIO_ACTIVE_HIGH>
+    ;
+};
+
+&spi1 {
+  cs-gpios = <&gpio1 0 GPIO_ACTIVE_LOW>;
+
+  trackball_peripheral: trackball_peripheral@0 {
+    status = "okay";
+    compatible = "pixart,pmw3610-efogtech";
+    reg = <0>;
+    spi-max-frequency = <2000000>;
+    irq-gpios = <&gpio0 20 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    cpi = <700>;
+    xy-swap;
+    evt-type = <INPUT_EV_REL>;
+    x-input-code = <INPUT_REL_X>;
+    y-input-code = <INPUT_REL_Y>;
+    force-awake;
+    /* keep the sensor awake while ZMK activity state is ACTIVE,
+        fallback to normal downshift mode after ZMK goes into IDLE / SLEEP mode.
+        thus, the sensor would be a `wakeup-source` */
+  };
+};
+
+// Overrides for the input-split child node
+&trackball_peripheral_split {
+  device = <&trackball_peripheral>;
+  input-processors
+    = <&zip_xy_to_scroll_mapper>
+		, <&zip_ble_report_rate_limit>;
+};
+
+&pro_micro_i2c {
+    status = "okay";
+
+    oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <32>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <31>;
+        com-sequential;
+        inversion-on;
+        prechargep = <0x22>;
+    };
+};

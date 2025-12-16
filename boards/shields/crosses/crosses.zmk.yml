@@ -1,0 +1,15 @@
+file_format: "1"
+id: crosses
+name: Crosses
+type: shield
+url: https://github.com/machetie/crosses-42-zmk-template
+requires: [nice_nano_v2]
+exposes: [i2c_oled]
+features:
+  - keys
+  - display
+  - pointer
+  - studio
+siblings:
+  - crosses_left
+  - crosses_right
