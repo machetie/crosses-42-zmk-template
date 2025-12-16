@@ -14,7 +14,6 @@
 #define NAV_LAYER 1
 #define SYM_LAYER 2
 #define SYSTEM_LAYER 3
-#define MOUSE_LAYER 4
 
 // ms timings for homerow mods for each side
 
@@ -121,7 +120,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        layer-names = "Base", "Num", "Sym", "Nav", "Mouse";
+        layer-names = "Base", "Num", "Sym", "Nav";
 
         default_layer {
             bindings = <
