@@ -1,4 +1,6 @@
-/ {
+ #include <physical_layouts.dtsi>
+
+ / {
     chosen {
         zmk,kscan = &mock_kscan;
     };
