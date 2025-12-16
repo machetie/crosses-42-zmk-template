@@ -25,6 +25,11 @@
   status = "okay";
 };
 
+// Right half also needs device property for trackball_peripheral_split
+&trackball_peripheral_split {
+  device = <&trackball_central>;
+};
+
 &spi1 {
   cs-gpios = <&gpio1 0 GPIO_ACTIVE_LOW>;
 
