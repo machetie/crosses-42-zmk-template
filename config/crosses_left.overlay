@@ -1,0 +1,5 @@
+/ {
+    chosen {
+        zmk,physical-layout = &gggw_crosses_42_layout;
+    };
+};
