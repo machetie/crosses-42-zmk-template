@@ -24,6 +24,12 @@
         };
     };
 
+    trackball_dongle_listener: trackball_dongle_listener {
+        compatible = "zmk,input-listener";
+        status = "okay";
+        device = <&trackball_peripheral_split>;
+    };
+
     crosses_dongle_transform: keymap_transform_dongle {
         compatible = "zmk,matrix-transform";
         columns = <12>;
