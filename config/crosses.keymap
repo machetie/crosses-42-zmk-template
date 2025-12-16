@@ -121,6 +121,8 @@
     keymap {
         compatible = "zmk,keymap";
 
+        layer-names = "Base", "Num", "Sym", "Nav", "Mouse";
+
         default_layer {
             bindings = <
 &kp UP    &kp Q        &kp W            &kp E          &kp R              &kp T               &kp Y        &kp U               &kp I         &kp O    &kp P     &kp UP
