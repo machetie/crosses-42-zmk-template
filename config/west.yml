@@ -10,6 +10,8 @@ manifest:
       url-base: https://github.com/badjeff
     - name: janpfischer
       url-base: https://github.com/janpfischer
+    - name: machetie
+      url-base: https://github.com/machetie
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -24,7 +26,7 @@ manifest:
       remote: badjeff
       revision: main
     - name: zmk-dongle-screen
-      remote: janpfischer
+      remote: machetie
       revision: main
   self:
     path: config
