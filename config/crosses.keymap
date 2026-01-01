@@ -155,7 +155,7 @@
             bindings = <
 &trans  &kp C_PREV  &kp LC(RIGHT)  &kp C_PP   &msc SCRL_UP    &kp PG_UP      &trans         &trans        &kp LC(PG_UP)  &kp LC(PG_DN)  &trans  &none
 &trans  &kp HOME    &mkp RCLK      &mkp MCLK  &mkp LCLK       &kp PAGE_DOWN  &kp LEFT       &kp DOWN      &kp UP         &kp RIGHT      &kp END &trans
-&trans  &trans      &trans         &trans     &msc SCRL_DOWN  &none          &kp C_BRI_DEC  &kp C_VOL_DN  &kp C_VOL_UP   &kp C_BRI_INC  &trans  &trans
+&trans  &trans      &trans         &trans     &msc SCRL_DOWN  &none          &kp F23        &kp C_VOL_DN  &kp C_VOL_UP   &kp F24        &trans  &trans
                                    &trans     &trans          &trans         &trans         &trans        &trans
             >;
         };
