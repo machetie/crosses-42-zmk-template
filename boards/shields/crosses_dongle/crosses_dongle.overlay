@@ -1,0 +1,57 @@
+ #include <dt-bindings/zmk/matrix_transform.h>
+ #include <physical_layouts.dtsi>
+
+ / {
+    chosen {
+        zmk,kscan = &mock_kscan;
+        zmk,physical-layout = &gggw_crosses_42_layout;
+    };
+
+    mock_kscan: kscan_1 {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
+    };
+
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        trackball_peripheral_split: trackball_peripheral_split@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+        };
+    };
+
+    trackball_dongle_listener: trackball_dongle_listener {
+        compatible = "zmk,input-listener";
+        status = "okay";
+        device = <&trackball_peripheral_split>;
+    };
+
+    crosses_dongle_transform: keymap_transform_dongle {
+        compatible = "zmk,matrix-transform";
+        columns = <12>;
+        rows = <5>;
+        map = <
+            RC(1,0) RC(1,1) RC(1,2) RC(1,3) RC(1,4) RC(1,5) RC(1,6) RC(1,7) RC(1,8) RC(1,9) RC(1,10) RC(1,11)
+            RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4) RC(2,5) RC(2,6) RC(2,7) RC(2,8) RC(2,9) RC(2,10) RC(2,11)
+            RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(3,6) RC(3,7) RC(3,8) RC(3,9) RC(3,10) RC(3,11)
+                          RC(4,3) RC(4,4) RC(4,5) RC(4,6) RC(4,7) RC(4,8)
+        >;
+    };
+
+    gggw_crosses_42_layout: gggw_crosses_42_layout {
+        compatible = "zmk,physical-layout";
+        display-name = "42 Key";
+        transform = <&crosses_dongle_transform>;
+        keys = <&key_physical_attrs 100 100 0 112 0 0 0>, <&key_physical_attrs 100 100 100 112 0 0 0>, <&key_physical_attrs 100 100 200 62 0 0 0>, <&key_physical_attrs 100 100 300 0 0 0 0>, <&key_physical_attrs 100 100 400 25 0 0 0>, <&key_physical_attrs 100 100 500 38 0 0 0>,
+               <&key_physical_attrs 100 100 912 38 0 0 0>, <&key_physical_attrs 100 100 1012 25 0 0 0>, <&key_physical_attrs 100 100 1112 0 0 0 0>, <&key_physical_attrs 100 100 1212 62 0 0 0>, <&key_physical_attrs 100 100 1312 112 0 0 0>, <&key_physical_attrs 100 100 1412 112 0 0 0>,
+               <&key_physical_attrs 100 100 0 212 0 0 0>, <&key_physical_attrs 100 100 100 212 0 0 0>, <&key_physical_attrs 100 100 200 162 0 0 0>, <&key_physical_attrs 100 100 300 100 0 0 0>, <&key_physical_attrs 104 100 400 125 0 0 0>, <&key_physical_attrs 100 100 500 138 0 0 0>,
+               <&key_physical_attrs 100 100 912 138 0 0 0>, <&key_physical_attrs 100 100 1012 125 0 0 0>, <&key_physical_attrs 100 100 1112 100 0 0 0>, <&key_physical_attrs 100 100 1213 162 0 0 0>, <&key_physical_attrs 100 100 1312 212 0 0 0>, <&key_physical_attrs 100 100 1412 212 0 0 0>,
+               <&key_physical_attrs 100 100 0 312 0 0 0>, <&key_physical_attrs 100 100 100 312 0 0 0>, <&key_physical_attrs 100 100 200 262 0 0 0>, <&key_physical_attrs 100 100 300 200 0 0 0>, <&key_physical_attrs 100 100 400 225 0 0 0>, <&key_physical_attrs 100 100 500 238 0 0 0>,
+               <&key_physical_attrs 100 100 912 238 0 0 0>, <&key_physical_attrs 100 100 1012 225 0 0 0>, <&key_physical_attrs 100 100 1112 200 0 0 0>, <&key_physical_attrs 100 100 1212 262 0 0 0>, <&key_physical_attrs 100 100 1312 312 0 0 0>, <&key_physical_attrs 100 100 1415 312 0 0 0>,
+               <&key_physical_attrs 100 100 350 372 0 0 0>, <&key_physical_attrs 100 100 450 372 0 0 0>, <&key_physical_attrs 100 100 550 372 0 0 0>, <&key_physical_attrs 100 100 850 372 0 0 0>, <&key_physical_attrs 100 100 950 372 0 0 0>, <&key_physical_attrs 100 100 1050 372 0 0 0>;
+    };
+};
