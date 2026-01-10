@@ -6,10 +6,8 @@ if SHIELD_CROSSES_RIGHT
 config ZMK_KEYBOARD_NAME
   default "Crosses BT"
 
-# Central role disabled for dongle mode - dongle is the central
-# Uncomment below if using keyboard without dongle (direct BT):
-# config ZMK_SPLIT_ROLE_CENTRAL
-#   default y
+config ZMK_SPLIT_ROLE_CENTRAL
+  default y
 
 endif
 
