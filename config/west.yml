@@ -8,6 +8,8 @@ manifest:
       url-base: https://github.com/efogdev
     - name: badjeff
       url-base: https://github.com/badjeff
+    - name: janpfischer
+      url-base: https://github.com/janpfischer
     - name: machetie
       url-base: https://github.com/machetie
   projects:

@@ -14,7 +14,6 @@
 #define NAV_LAYER 1
 #define SYM_LAYER 2
 #define SYSTEM_LAYER 3
-#define MOUSE_LAYER 4
 
 // ms timings for homerow mods for each side
 
@@ -121,7 +120,8 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        Base {
+            display-name = "Base";
             bindings = <
 &kp UP    &kp Q        &kp W            &kp E          &kp R              &kp T               &kp Y        &kp U               &kp I         &kp O    &kp P     &kp UP
 &kp LEFT  &hml LGUI A  &hml LEFT_ALT S  &hml LCTRL D   &hml LEFT_SHIFT F  &kp G               &kp H        &hmr RIGHT_SHIFT J  &hmr RCTRL K  &kp L    &kp SEMI  &kp RIGHT
@@ -130,7 +130,8 @@
             >;
         };
 
-        number_layer {
+        Num {
+            display-name = "Num";
             bindings = <
 &trans          &kp FSLH  &kp N7  &kp N8  &kp N9  &kp DOT    &bt BT_SEL 2  &kp F7     &kp F8  &kp F9  &kp F12  &bt BT_CLR
 &studio_unlock  &kp STAR  &kp N4  &kp N5  &kp N6  &kp PLUS   &bt BT_SEL 1  &kp F4     &kp F5  &kp F6  &kp F11  &bt BT_SEL 4
@@ -139,21 +140,23 @@
             >;
         };
 
-        symbol_layer {
+        Sym {
+            display-name = "Sym";
             bindings = <
-&trans  &kp EXCL   &kp AT     &kp HASH   &kp DOLLAR  &kp PRCNT  &kp CARET  &kp AMPS   &kp STAR  &kp EQUAL  &kp MINUS  &kp PRINTSCREEN
-&trans  &kp TILDE  &kp LBKT   &kp LBRC   &kp LPAR    &kp FSLH   &kp BSLH   &kp RPAR   &kp RBRC  &kp RBKT   &kp UNDER  &trans
-&trans  &kp COLON  &kp LT     &kp GT     &kp GRAVE   &kp SQT    &kp DQT    &kp QMARK  &kp PLUS  &trans     &kp PIPE   &trans
-                              &trans     &trans      &trans     &trans     &trans     &trans
+&trans  &kp EXCL   &kp AT    &kp HASH  &kp DOLLAR  &kp PRCNT  &kp CARET  &kp AMPS   &kp STAR  &kp EQUAL  &kp MINUS  &kp PRINTSCREEN
+&trans  &kp TILDE  &kp LBKT  &kp LBRC  &kp LPAR    &kp FSLH   &kp BSLH   &kp RPAR   &kp RBRC  &kp RBKT   &kp UNDER  &trans
+&trans  &kp COLON  &kp LT    &kp GT    &kp GRAVE   &kp SQT    &kp DQT    &kp QMARK  &kp PLUS  &trans     &kp PIPE   &trans
+                             &trans    &trans      &trans     &trans     &trans     &trans
             >;
         };
 
-        navigation_layer {
+        Nav {
+            display-name = "Nav";
             bindings = <
-&trans  &kp C_PREV  &kp LC(RIGHT)  &kp C_PP   &msc SCRL_UP    &kp PG_UP      &trans         &trans        &kp LC(PG_UP)  &kp LC(PG_DN)  &trans  &none
-&trans  &kp HOME    &mkp RCLK      &mkp MCLK  &mkp LCLK       &kp PAGE_DOWN  &kp LEFT       &kp DOWN      &kp UP         &kp RIGHT      &kp END &trans
-&trans  &trans      &trans         &trans     &msc SCRL_DOWN  &none          &kp C_BRI_DEC  &kp C_VOL_DN  &kp C_VOL_UP   &kp C_BRI_INC  &trans  &trans
-                                   &trans     &trans          &trans         &trans         &trans        &trans
+&trans  &kp C_PREV  &kp LC(RIGHT)  &kp C_PP   &msc SCRL_UP    &kp PG_UP      &trans    &trans        &kp LC(PG_UP)  &kp LC(PG_DN)  &trans   &none
+&trans  &kp HOME    &mkp RCLK      &mkp MCLK  &mkp LCLK       &kp PAGE_DOWN  &kp LEFT  &kp DOWN      &kp UP         &kp RIGHT      &kp END  &trans
+&trans  &trans      &trans         &trans     &msc SCRL_DOWN  &none          &kp F23   &kp C_VOL_DN  &kp C_VOL_UP   &kp F24        &trans   &trans
+                                   &trans     &trans          &trans         &trans    &trans        &trans
             >;
         };
     };
