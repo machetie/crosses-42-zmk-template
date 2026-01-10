@@ -28,7 +28,8 @@
   chosen {
     zmk,kscan = &kscan0;
     zephyr,display = &oled;
-    zmk,physical-layout = &gggw_crosses_54_layout;
+    /* Force the 42-key layout so keymap rows align with hardware */
+    zmk,physical-layout = &gggw_crosses_42_layout;
   };
 
   default_transform: keymap_transform0 {
