@@ -29,14 +29,10 @@
     ;
 };
 
-&trackball_peripheral_listener {
-  status = "okay";
-};
-
 &spi1 {
   cs-gpios = <&gpio1 0 GPIO_ACTIVE_LOW>;
 
-  trackball_central: trackball_central@0 {
+  trackball_peripheral: trackball_peripheral@0 {
     status = "okay";
     compatible = "pixart,pmw3610-efogtech";
     reg = <0>;
@@ -56,11 +52,12 @@
   };
 };
 
-// Overrides for the input listener node
-&trackball_central_listener {
-  status = "okay";
-  device = <&trackball_central>;
-	input-processors = <&zip_ble_report_rate_limit>;
+// Overrides for the input-split child node
+&trackball_peripheral_split {
+  device = <&trackball_peripheral>;
+  input-processors
+    = <&zip_xy_to_scroll_mapper>
+		, <&zip_ble_report_rate_limit>;
 };
 
 &pro_micro_i2c {
