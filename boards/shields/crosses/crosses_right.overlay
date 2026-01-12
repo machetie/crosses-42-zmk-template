@@ -27,6 +27,11 @@
   input-processors = <&zip_ble_report_rate_limit>;
 };
 
+// Disable left trackball split on right half (not used here)
+&trackball_peripheral_split {
+  status = "disabled";
+};
+
 &spi1 {
   cs-gpios = <&gpio1 0 GPIO_ACTIVE_LOW>;
 
