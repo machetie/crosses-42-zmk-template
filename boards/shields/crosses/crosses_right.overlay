@@ -6,15 +6,7 @@
 #include "crosses.dtsi"
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
-&default_transform {
-  col-offset = <6>;
-};
-
 &forty_two_transform {
-  col-offset = <6>;
-};
-
-&thirty_six_transform {
   col-offset = <6>;
 };
 
@@ -31,6 +23,11 @@
 
 &trackball_peripheral_listener {
   status = "okay";
+};
+
+// Right half also needs device property for trackball_peripheral_split
+&trackball_peripheral_split {
+  device = <&trackball_central>;
 };
 
 &spi1 {
