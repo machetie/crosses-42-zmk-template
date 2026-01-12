@@ -54,7 +54,7 @@
 		};
   };
 
-  //left hand trackball
+  //left hand trackball split (reg 0)
   split_inputs {
     #address-cells = <1>;
     #size-cells = <0>;
@@ -62,6 +62,12 @@
     trackball_peripheral_split: trackball_peripheral_split@0 {
       compatible = "zmk,input-split";
       reg = <0>;
+    };
+
+    //right hand trackball split (reg 1) - for dongle mode
+    trackball_right_split: trackball_right_split@1 {
+      compatible = "zmk,input-split";
+      reg = <1>;
     };
   };
 
@@ -71,9 +77,10 @@
     device = <&trackball_peripheral_split>;
   };
 
-  //right hand trackball
-  trackball_central_listener: trackball_central_listener {
+  //right hand trackball listener - for dongle mode
+  trackball_right_listener: trackball_right_listener {
     compatible = "zmk,input-listener";
     status = "disabled";
+    device = <&trackball_right_split>;
   };
 };
