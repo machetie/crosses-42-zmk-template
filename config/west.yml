@@ -20,7 +20,7 @@ manifest:
       remote: efogdev
       revision: zephyr-4.1
     - name: zmk-report-rate-limit
-      remote: efogdev
+      remote: machetie
       revision: main
     - name: zmk-input-processor-xyz
       remote: badjeff
